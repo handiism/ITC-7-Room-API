@@ -15,7 +15,9 @@
         tools:ignore="AllowBackup">
         <activity
             android:name=".activity.DetailActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:label="@string/detail"
+            android:parentActivityName=".activity.MainActivity" />
         <activity
             android:name=".activity.MainActivity"
             android:exported="true">

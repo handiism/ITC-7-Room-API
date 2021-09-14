@@ -13,19 +13,26 @@ import id.handiism.heroes.model.HeroesResponseItem;
 
 @Entity(tableName = "heroes")
 public class HeroesEntity implements Parcelable {
+    public static final Creator<HeroesEntity> CREATOR = new Creator<HeroesEntity>() {
+        @Override
+        public HeroesEntity createFromParcel(Parcel in) {
+            return new HeroesEntity(in);
+        }
+
+        @Override
+        public HeroesEntity[] newArray(int size) {
+            return new HeroesEntity[size];
+        }
+    };
     @NonNull
     @PrimaryKey
     public String name = "";
-
     @ColumnInfo(name = "death_year")
     public int deathYear;
-
     @ColumnInfo(name = "description")
     public String description;
-
     @ColumnInfo(name = "ascension_year")
     public int ascensionYear;
-
     @ColumnInfo(name = "birth_year")
     public String birthYear;
 
@@ -48,18 +55,6 @@ public class HeroesEntity implements Parcelable {
         ascensionYear = in.readInt();
         birthYear = in.readString();
     }
-
-    public static final Creator<HeroesEntity> CREATOR = new Creator<HeroesEntity>() {
-        @Override
-        public HeroesEntity createFromParcel(Parcel in) {
-            return new HeroesEntity(in);
-        }
-
-        @Override
-        public HeroesEntity[] newArray(int size) {
-            return new HeroesEntity[size];
-        }
-    };
 
     @Override
     public int describeContents() {

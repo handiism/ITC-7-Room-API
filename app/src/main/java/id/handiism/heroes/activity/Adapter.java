@@ -1,27 +1,23 @@
 package id.handiism.heroes.activity;
 
-import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-import id.handiism.heroes.R;
-import id.handiism.heroes.database.AppDatabase;
 import id.handiism.heroes.database.HeroesEntity;
-import id.handiism.heroes.databinding.DialogItemBinding;
 import id.handiism.heroes.databinding.RowItemBinding;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
-    private List<HeroesEntity> list;
-    private Context context;
+    private final List<HeroesEntity> list;
+    private final Context context;
 
     public Adapter(List<HeroesEntity> list, Context context) {
         this.list = list;
@@ -47,14 +43,15 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         return list.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        private RowItemBinding itemBinding;
-        private Context context;
+    public static class ViewHolder extends RecyclerView.ViewHolder implements OnClickListener {
+        private final RowItemBinding itemBinding;
+        private final Context context;
         private HeroesEntity hero;
 
-        public ViewHolder(@NonNull RowItemBinding itemBinding) {
+        public ViewHolder(RowItemBinding itemBinding, Context context) {
             super(itemBinding.getRoot());
             this.itemBinding = itemBinding;
+            this.context = context;
         }
 
         public void onBind(HeroesEntity item) {
@@ -63,18 +60,11 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
             itemBinding.rlItem.setOnClickListener(this);
         }
 
-        public ViewHolder(RowItemBinding itemBinding, Context context) {
-            super(itemBinding.getRoot());
-            this.itemBinding = itemBinding;
-            this.context = context;
-        }
-
         @Override
         public void onClick(View view) {
-            DialogItemBinding dialogBinding;
             if (view == itemBinding.rlItem) {
                 Intent intent = new Intent(context, DetailActivity.class);
-                intent.putExtra(DetailActivity.BUNDLE,hero);
+                intent.putExtra(DetailActivity.BUNDLE, hero);
                 context.startActivity(intent);
             }
         }

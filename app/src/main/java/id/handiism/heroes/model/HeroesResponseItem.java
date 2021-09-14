@@ -20,16 +20,17 @@ public class HeroesResponseItem implements Parcelable {
             return new HeroesResponseItem[size];
         }
     };
+
+    @SerializedName("death_year")
+    private final int deathYear;
+    @SerializedName("description")
+    private final String description;
+    @SerializedName("ascension_year")
+    private final int ascensionYear;
+    @SerializedName("birth_year")
+    private final String birthYear;
     @SerializedName("name")
     private String name;
-    @SerializedName("death_year")
-    private int deathYear;
-    @SerializedName("description")
-    private String description;
-    @SerializedName("ascension_year")
-    private int ascensionYear;
-    @SerializedName("birth_year")
-    private String birthYear;
 
     protected HeroesResponseItem(Parcel in) {
         name = in.readString();
@@ -51,32 +52,16 @@ public class HeroesResponseItem implements Parcelable {
         return deathYear;
     }
 
-    public void setDeathYear(int deathYear) {
-        this.deathYear = deathYear;
-    }
-
     public String getDescription() {
         return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public int getAscensionYear() {
         return ascensionYear;
     }
 
-    public void setAscensionYear(int ascensionYear) {
-        this.ascensionYear = ascensionYear;
-    }
-
     public String getBirthYear() {
         return birthYear;
-    }
-
-    public void setBirthYear(String birthYear) {
-        this.birthYear = birthYear;
     }
 
     @NonNull
