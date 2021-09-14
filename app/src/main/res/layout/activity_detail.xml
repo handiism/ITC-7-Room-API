@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="25dp"
+    tools:context=".activity.DetailActivity">
+
+    <TextView
+        android:id="@+id/tv_name_section"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/name"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_name_section"
+        android:layout_centerHorizontal="true"
+        android:text="@string/name"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/tv_birth_year_section"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_name"
+        android:layout_centerHorizontal="true"
+        android:text="@string/birth_year"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_birth_year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_birth_year_section"
+        android:layout_centerHorizontal="true"
+        android:text="@string/birth_year"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/tv_death_year_section"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_birth_year"
+        android:layout_centerHorizontal="true"
+        android:text="@string/death_year"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_death_year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_death_year_section"
+        android:layout_centerHorizontal="true"
+        android:text="@string/death_year"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/tv_ascension_year_section"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_death_year"
+        android:layout_centerHorizontal="true"
+        android:text="@string/ascension_year"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_ascension_year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_ascension_year_section"
+        android:layout_centerHorizontal="true"
+        android:text="@string/ascension_year"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/tv_description_section"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_ascension_year"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:text="@string/description"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_description_section"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:text="@string/description"
+        android:textSize="22sp" />
+
+</RelativeLayout>

@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Heroes</string>
+    <string name="name">Name</string>
+    <string name="birth_year">Birth Year</string>
+    <string name="death_year">Death Year</string>
+    <string name="ascension_year">Ascension Year</string>
+    <string name="description">Description</string>
 </resources>
